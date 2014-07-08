@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://expath.org/ns/pkg" name="http://politicalmashup.nl/modules" abbrev="pm-modules" version="0.4.7" spec="1.0">
+    <title>Political Mashup / Modules</title>
+    <xquery>
+        <namespace>http://politicalmashup.nl/modules/export</namespace>
+        <file>export.xqm</file>
+    </xquery>
+    <xquery>
+        <namespace>http://politicalmashup.nl/modules/util</namespace>
+        <file>pm-util.xqm</file>
+    </xquery>
+    <xquery>
+        <namespace>http://www.functx.com</namespace>
+        <file>functx-1.0-nodoc-2007-01.xq</file>
+    </xquery>
+</package>

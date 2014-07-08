@@ -1,0 +1,147 @@
+/*
+ * My CSS is based on Google's advanced search function
+ * (https://www.google.nl/advanced_search). I chose this style because it is
+ * nice, clean and fits the style of the result pages.
+ * -- Wyko Rijnsburger
+ */
+
+body {
+    font-family : "Lucida Sans", sans-serif;
+    font-size : medium;
+}
+
+h1 {
+    font-size:20px;
+    color:#e34b39;
+    font-weight:200;
+    padding:20px 20px 20px 40px;
+    border-bottom:gray 1px solid;
+}
+
+h2 {
+    font-size:16px;
+    color:#e34b39;
+    font-weight:200;
+    padding-left:40px;
+}
+
+p {
+    margin-left:40px;
+    font-size:13px;
+}
+
+th {
+    font-size:11px;
+    font-weight:100;
+    padding-left:40px;
+}
+
+#searchbutton {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left:40px;
+    width:140px;
+    border:1px solid #3079ed;
+    color:white;
+    background-color:#4c8efb;
+    border-radius:2px;
+    cursor:pointer;
+    font-size:10px;
+    font-weight:bold;
+    padding:5px;
+}
+
+#searchbutton:hover {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left:40px;
+    width:140px;
+    border:1px solid #2f5bb7;
+    color:white;
+    background-color:#478bf9;
+    border-radius:2px;
+    cursor:pointer;
+}
+
+td {
+    font-weight:100;
+    font-size:11px;
+}
+
+.dropdown {
+    width:600px;
+    border-radius:2px;
+    border-color:#dcdcdc;
+    background-color:#f3f3f3;
+    font-weight:bold;
+    color:#444444;
+}
+
+.dropdown:hover {
+    width:600px;
+    border-radius:2px;
+    border-color:#c6c6c6;
+    background-color:#f3f3f3;
+    font-weight:bold;
+    color:#444444;
+}
+
+div.result {
+    margin-top : 1em;
+    margin-bottom : 1em;
+    border-top : 1px solid #dddde8;
+    border-bottom : 1px solid #dddde8;
+    background-color : #f6f6f8;
+}
+
+#search-pagination {
+    display : block;
+    float : left;
+    text-align : left;
+    width : 100%;
+    margin : 10px 0 10px 0;
+    padding : 0;
+    overflow : hidden;
+}
+
+#search-pagination ul {
+    padding:0;
+    margin:0;
+}
+
+#search-pagination li {
+    list-style-type: none;
+    display : inline-block;
+    float : left;
+    padding : 4px;
+    text-align : center;
+    background-color : #f6f6fa;
+    border : 1px solid #dddde8;
+    color : #181a31;
+}
+
+a.hi {
+    font-weight : bold;
+    background-color : #FFFF00;
+}
+
+span.title {
+    font-size : medium;
+}
+
+span.url {
+    color : green;
+    font-size : small;
+}
+
+span.snippet {
+    font-size : small;
+}
+
+span.block {
+    display : block;
+}
+
+span.nr {
+    font-weight:bold;
+    padding-right:5px;
+    display : inline-block;
+}

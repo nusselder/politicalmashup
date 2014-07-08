@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>Application for resolving and viewing the available political data.</description>
+    <author>Arjan Nusselder</author>
+    <website>http://politicalmashup.nl/</website>
+    <status>beta</status>
+    <license>MIT</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>resolver</target>
+    <prepare/>
+    <finish/>
+    <deployed>2014-03-12T12:06:16.14+01:00</deployed>
+</meta>

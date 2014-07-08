@@ -1,0 +1,45 @@
+
+/*
+span.muni-date{display:inline-block;width:5.8em;color:#1e0fbe;font-family:sans-serif;}
+      table.output td{padding:25px 5px 5px;}
+      table.output a{color:#006621;font-family:sans-serif;}
+      table.output td div{margin:0 0 2px 0;font-size:120%;}
+      table.output{border:0;}
+      table.output td{border:0;border-bottom:1px solid #ddd;}
+      table.output th{border:0;background:#eee !important;font-weight:normal;}
+      div.muni-cloud{color:#622;font-family:sans-serif;}
+      div.muni-snippet{padding-top:10px;color:#111;}
+      div.muni-snippet p{font-family:sans-serif;}
+      div.muni-snippet span.hi{background:#eee;font-weight:bold;}
+      div.introduction div{width:49%;float:left;}
+      div.introduction p{font-family:sans-serif;color:#666;width:auto;font-size:12px;}
+      div.introduction div.querybox{float:none;clear:both;width:100%;border-top:1px solid #888;padding-top:2em;}
+      div.introduction div.querybox input{width:60%;font-size:16px;padding:5px 5px 5px 10px;height:30px;}
+      div.introduction div.querybox button{font-size:16px;padding:5px;height:42px;width:100px;}
+      div.search-form td{border:none;font-family:sans-serif;color:#666;}
+      div.search-form input, div.search-form select{border:none;border-bottom:1px solid #aaa;color:#666}
+      div.search-form table{border-bottom:none;border-right:none;border-top:none;}
+      span.intr-datum{color:#1e0fbe;padding:0 0.3em;}
+      span.intr-link{color:#006621;text-decoration:underline;padding:0 0.3em;}
+      span.intr-term{color:#622;padding:0 0.3em;}
+      span.intr-fragment{color:#000;background:#eee;font-weight:bold;padding:0 0.3em;}
+  */  
+      /* For entity/wordcloud summary. */  
+      div.muni-cloud{color:#622;font-family:sans-serif;padding:0 0 10px 3px;font-weight:bold;font-size:12px;}
+      form.wordle-post button{border:1px solid #aaa;display:block;width:100%;background:#fff;}
+      form.wordle-post textarea{width:100%;height:100px;border:1px solid #aaa;overflow:hidden;display:none;}
+      div.topic.summary h2{border-color:#aaa;margin:20px 0 10px;}
+      div.folia-meta table{width:100%;}
+      div.folia-meta table td{border:none;border-bottom:1px solid #ddd;}
+      div.folia-meta table th{text-align:left;}
+      div.folia-meta a{color:#446;text-decoration:none;}
+      div.folia-meta a:hover{text-decoration:underline;}
+      
+      /* For entities in paragraphs. */
+      span.paragraph-entities{display:block;border-top:1px solid #ddd;margin-top:1em;color:#666;background:#eee;font-variant:small-caps;}
+      span.paragraph-entities a{color:#446;text-decoration:none;}
+      span.paragraph-entities a:hover{text-decoration:underline;}
+      
+      /* For generic documents. */
+      div.scene.generic h3,
+      div.scene.generic span.reference-links{border-color:#aaa;}

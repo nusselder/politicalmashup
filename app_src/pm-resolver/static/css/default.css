@@ -1,0 +1,208 @@
+/* Global menu layout. */
+div#menu {
+  position: fixed; top: 10px; left: 10px; bottom: 10px;
+  padding: 5px 5px 15px; margin: 0;
+  width: 250px;
+  border-right: 2px solid #ddd;
+  z-index: 1; overflow-y: scroll;
+  }
+div#menu:hover {
+  overflow-y: scroll;
+  }
+  
+/* Menu contents layout. */
+div#menu div.logo,
+div#menu div#sources,
+div#menu div#summary,
+div#menu div#lucene-query,
+div#menu div#index,
+div#menu div.other {
+  border-bottom: 1px solid #ddd; padding: 8px 0; width: 235px;
+  }
+
+
+div#sources,
+div#summary,
+div#menu div.other{color: #446; font: 12px sans-serif;}
+div#sources a {color: #446; font-size: 14px;}
+div#summary div {
+  border-bottom: 2px solid #666;
+  width: 100px;
+  margin-bottom: 3px;
+  }
+div#sources div {margin-bottom: 5px;}
+div#sources div.last {margin-bottom: 0;}
+
+
+
+/* Actually, ul's in the #index? */
+div#menu ul {list-style: none outside; padding: 0; margin: 0 0 0 0;}
+
+div#menu ul li {font-family: sans-serif; color: #222; margin-bottom: 3px;}
+div#menu ul li.indent {padding-left: 10px;}
+
+div#menu ul a {color: #88a; font: 12px sans-serif; text-decoration: none;}
+div#menu ul a:hover {text-decoration: underline;}
+
+div#menu ul li a span.item-title {color: #446;}
+
+
+div#menu ul div.full {
+  color: #004; font-size: 12px; position: absolute; display: none;
+  background: #eee; padding: 5px; border: 1px solid #002; width: 220px;
+  }
+div#menu ul li:hover div.full {display: block;}
+
+div#lucene-query {
+  margin-top: 10px; padding: 0 0 60px 0 !important;
+  }
+div#lucene-query div {color: #446; font: 12px sans-serif;}
+div#lucene-query a {color: #446; font: 12px sans-serif; text-decoration: none;}
+div#lucene-query a:hover {text-decoration: underline;}
+div#lucene-query-matches {
+  height: 35px; width: 222px;
+  overflow-y: scroll; position: absolute;
+  padding: 5px; background: #fff;
+  border: 1px dashed gray;
+  }
+div#lucene-query:hover div#lucene-query-matches {
+  height: 300px; border: 1px solid gray;
+  }
+
+
+/* Global content layout */
+div#content {position: absolute; left: 290px; top: 10px; width: 800px;}
+
+/* Headers for scene/speech etc. */
+h1, h2, h3, h4, p {font-family: sans-serif; color: #222; padding: 3px 5px;}
+h1, h2, h3, h4 {border-bottom: 3px solid #666}
+h1 {font-size: 28px; margin: 0 0 0 0;}
+h2 {font-size: 20px; margin: 40px 0 10px 0;}
+h3 {font-size: 16px; margin: 30px 0 0 0;}
+h4 {font-size: 12px; margin: 20px 0 0 0;}
+h4 a {color: #222; text-decoration: underline;}
+
+span.outcome-accepted {background: #cfc;}
+span.outcome-rejected {background: #fcc;}
+
+
+p {font: 12px sans-serif; width: 600px; border: 2px solid #ddd; margin: 10px 0; text-align: justify;}
+
+em {font-family: monospace;}
+em a {color: #446; font-style: normal;}
+em.query-match {background: yellow; font-style: normal; font-family: sans-serif;}
+
+
+
+div.stage-direction {color: #333; border-right: 2px solid #aaa; border-top: 2px solid #aaa; padding: 1px 5px 1px 3px; margin: 5px 0 10px 0;}
+div.stage-direction p {border: 2px solid #ddd;}
+
+div.stage-direction-meta {
+  color: #333;
+  border-right: none;
+  padding: 1px 5px 1px 3px; margin: 5px 0 10px 0;
+  width: 83%}
+div.stage-direction-meta p {
+  background: #eee;
+}
+
+/* Special elements that are part of stage-directions. */
+div.members-present,
+div.chair-declaration,
+div.pagebreak,
+div.vote {
+  width: 600px;
+  padding: 3px 5px; margin: 10px 0;
+  border: 2px solid #ddd;
+  background: #eee;
+  }
+
+div.members-present {font: 14px monospace;}
+div.members-present em {font-variant: small-caps;}
+
+div.chair-declaration em,
+div.chair-declaration em a {font: small-caps 14px monospace;}
+div.pagebreak {text-align: center;}
+div.pagebreak em,
+div.pagebreak em a {font: small-caps 14px monospace; color: #c55;}
+
+div.vote {font: 14px monospace;}
+div.vote a {color: #446; font-style: normal;}
+div.vote div {margin: 4px 0;}
+
+span.vote-meta {font-size: 70%; color: #666;}
+
+
+div.speaker-image {
+  float: right;
+  font: 12px sans-serif; color: #888; /* For text message when the image can't be loaded. */
+  }
+div.speaker-image a img {border: none;}
+div.speech {overflow: hidden;}
+
+span.note {background: #bbb; border: 1px dashed #888;}
+
+
+
+/* Define colours. */
+
+h2,
+div#summary div.topics {border-color: #844;}
+
+h3,
+div#summary div.scenes {border-color: #448;}
+
+h4,
+div#summary div.speeches {border-color: #484;}
+
+
+.selected {background: #ffe !important; border: 2px solid #444 !important;}
+
+a.internal:hover {color: #448 !important;}
+a.politicalmashup:hover {color: #f0037f !important;}
+a.external:hover {color: #8a0a07 !important;}
+
+
+/* Position and appearance for html/xml links for each element. */
+h1, h2, h3, h4, div.stage-direction, p {position: relative;} /* Position relative, to enable position absolute on span.reference-links below. */
+
+span.reference-links {
+  display: block; 
+  color: #888;
+  font-size: 10px; font-weight: bold; font-family: sans-serif;
+  margin: 0 0 0 5px; padding: 2px 3px 0 3px;
+  border-width: 1px; border-style: solid;
+  }
+span.reference-links a {color: #888; text-decoration: none;}
+h2 span.reference-links {
+  border-color: #844;
+  border-bottom: none;
+  position: absolute; bottom: 0; right: 0;
+  }
+h3 span.reference-links {
+  border-color: #448;
+  border-bottom: none;
+  position: absolute; bottom: 0; right: 0;
+  }
+h4 span.reference-links {
+  border-color: #484;
+  border-bottom: none;
+  position: absolute; bottom: 0; right: 0;
+  }
+/* Only direct reference childs in stage-directions (check if which IE understands this). */
+div.stage-direction > span.reference-links {
+  border-color: #aaa;
+  border-top: none; border-right: none;
+  position: absolute; top: 0; right: 0;
+  }
+div.stage-direction-meta > span.reference-links {
+  border-right: 1px solid #aaa; /* re-enable right border for meta directions */
+  }
+
+
+p span.reference-links {
+  border-color: #ddd;
+  border-top: none; border-right: none;
+  float: right;
+  margin: -3px -5px 0px 10px;
+  }

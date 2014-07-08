@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaluation id="5" name="maarten" status="new" collection="d/ode">
+    <documents>
+        <document id="ode.d.21_12_schriftelijke_vragen_van_t_wout_inzake_kaartverkoop_ov_rondom_staking_gvb" order="1" random-order="1" description="Na incident in OV staakt het openbaar vervoer. Kaartverkoop in tram moet mogelijk blijven vooral ook voor toeristen." guessed-id="ode.d.21_12_schriftelijke_vragen_van_t_wout_inzake_kaartverkoop_ov_rondom_staking_gvb" guessed-order=""/>
+        <document id="ode.d.220_11" order="2" random-order="8" description="Onterecht betaalde uitkeringen worden teruggevorderd. &#xD;&#xA;Amsterdam" guessed-id="ode.d.220_11" guessed-order=""/>
+        <document id="ode.d.220lammeren" order="3" random-order="7" description="Weghalen van groen is slecht voor de vogelstand, in het bijzonder voor mussen.&#xD;&#xA;Weggehaald groen moet worden gecompenseerd." guessed-id="ode.d.220lammeren" guessed-order=""/>
+        <document id="ode.d.223_11" order="4" random-order="3" description="Plan om schoolverzuim tegen te gaan, in het bijzonder in het voorbereidend beroepsonderwijs. Er is veel geld beschikbaar." guessed-id="ode.d.223_11" guessed-order=""/>
+        <document id="ode.d.224_11" order="5" random-order="10" description="Initiatief voor een zorghotel zoekt nog naar een passende locatie.&#xD;&#xA;Belangrijk om alle partijen bij overleg te betrekken." guessed-id="ode.d.224_11" guessed-order=""/>
+        <document id="ode.d.225_11" order="6" random-order="9" description="Drugsgebruikers en ex-gebruikers geven veel overlast als huurders.&#xD;&#xA;Corporaties moeten die lui kunnen weigeren als huurder." guessed-id="ode.d.225_11" guessed-order=""/>
+        <document id="ode.d.226_12_schriftelijke_vragen_van_der_pligt_inzake_versobering_zorg_chronisch_zieken" order="7" random-order="2" description="Fysiotherapie valt niet meer volledig onder standaard verzekering.&#xD;&#xA;Patienten met chronische aandoeningen worden de dupe." guessed-id="ode.d.226_12_schriftelijke_vragen_van_der_pligt_inzake_versobering_zorg_chronisch_zieken" guessed-order=""/>
+        <document id="ode.d.227_11" order="8" random-order="5" description="Overlast van jongeren op straat wordt aangepakt dmv straatcoaches.&#xD;&#xA;Informatie over hen wordt gedeeld." guessed-id="ode.d.227_11" guessed-order=""/>
+        <document id="ode.d.227_12_schriftelijke_vragen_ivens_inzake_parkeergarage_bij_amsterdam_arena" order="9" random-order="6" description="Parkeren onder de Amsterdam Arena. &#xD;&#xA;" guessed-id="ode.d.227_12_schriftelijke_vragen_ivens_inzake_parkeergarage_bij_amsterdam_arena" guessed-order=""/>
+        <document id="ode.d.228_11" order="10" random-order="4" description="Overlast van hangjongeren kan beter bestreden worden door straatcoaches in koppels in te zetten. In heel veel gebieden." guessed-id="ode.d.228_11" guessed-order=""/>
+    </documents>
+    <score>
+        <agreement number-of-agreements=""/>
+    </score>
+</evaluation>

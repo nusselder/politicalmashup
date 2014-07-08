@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://expath.org/ns/pkg" name="http://politicalmashup.nl/oai" abbrev="pm-oai" version="0.2.2" spec="1.0">
+    <title>Political Mashup / OAI</title>
+    <dependency package="http://politicalmashup.nl/modules" semver-min="0.4.7"/>
+</package>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://exist-db.org/collection-config/1.0">
+    <index xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:pmd="http://www.politicalmashup.nl/docinfo" xmlns:pm="http://www.politicalmashup.nl">
+        <fulltext default="none" attributes="false"/>
+        <!--
+            Name index for person name autocompletion.
+            TODO: make the lucene indices qname="pm:name" and explicitly the stuff below, so the indices should become faster, and match="" is apparently subject to change..
+        -->
+        <lucene>
+            <analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer"/>
+            <!-- For Arjan's id-members.xq script, an index on each child of pm:name. -->
+            <text match="//pm:name/*"/>
+            <!-- For Lars' autocomplete.xq script, and index on the entire main pm:name element. -->
+            <text match="//pm:member/pm:name"/>
+        </lucene>
+        <create qname="@pmd:datetime" type="xs:dateTime"/>
+        <create qname="@pm:id" type="xs:string"/>
+        <create qname="@pm:from" type="xs:string"/>
+        <create qname="@pm:till" type="xs:string"/>
+        <create qname="@pm:role" type="xs:string"/>
+        <create qname="@pm:type" type="xs:string"/>
+        <create qname="@pm:body" type="xs:string"/>
+        <create qname="@pm:party-ref" type="xs:string"/>
+        <create qname="pm:last" type="xs:string"/>
+        <!-- index for uk member data with membership-id's -->
+        <create qname="@pm:membership-id" type="xs:string"/>
+    </index>
+</collection>

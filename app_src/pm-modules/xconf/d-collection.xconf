@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://exist-db.org/collection-config/1.0">
+    <index xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:folia="http://ilk.uvt.nl/FoLiA" xmlns:pmx="http://www.politicalmashup.nl/extra" xmlns:pmd="http://www.politicalmashup.nl/docinfo" xmlns:pm="http://www.politicalmashup.nl">
+        <fulltext default="none" attributes="false"/>
+        <!-- Lucene index is configured below -->
+        <lucene>
+            <analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer"/>
+            <text qname="pm:p"/>
+            <text qname="pm:stage-direction"/>
+            <text qname="pm:speech"/>
+            <text qname="pm:scene"/>
+            <text qname="pm:topic"/>
+            <text qname="@pm:title"/>
+            <text qname="@pm:speaker"/>
+            <!-- For generic non-pm documents. -->
+            <text qname="pmx:document"/>
+            <text qname="pmx:title"/>
+            <text qname="pmx:text"/>
+            <!-- FoLiA indices. -->
+            <text qname="folia:t"/>
+            <!-- Entity links. -->
+            <text qname="@pmx:entity-name"/>
+            <!-- cloud term index test -->
+            <text qname="term"/>
+        </lucene>
+        <create qname="@pmd:datetime" type="xs:dateTime"/>
+        <create qname="dc:date" type="xs:date"/>
+        <create qname="dc:identifier" type="xs:string"/>
+        <create qname="pm:legislative-period" type="xs:string"/>
+        <create qname="@pm:party-ref" type="xs:string"/>
+        <create qname="@pm:id" type="xs:string"/>
+        <create qname="@pm:member-ref" type="xs:string"/>
+        <create qname="@pm:house" type="xs:string"/>
+        <!-- For the parliamentary documents. -->
+        <create qname="pm:dossiernr" type="xs:string"/>
+        <create qname="pm:ondernr" type="xs:string"/>
+        <create qname="@pm:doc-ref" type="xs:string"/>
+        <create qname="@pm:ref" type="xs:string"/>
+        <create qname="@pm:source-identifier" type="xs:string"/>
+        <!-- FoLiA folia:lemma class (lemma word) / folia:pos class (POS type) -->
+        <create qname="@class" type="xs:string"/>
+        <!-- Entity links. -->
+        <create qname="pm:link" type="xs:string"/>
+        <create qname="@pmx:linktype" type="xs:string"/>
+        <!-- cloud term index test -->
+        <create qname="term" type="xs:string"/>
+        <create qname="@w" type="xs:string"/>
+        <create qname="@pos" type="xs:string"/>
+    </index>
+</collection>

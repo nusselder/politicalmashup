@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaluation id="4" name="arjan eval" status="new" collection="d/ode">
+    <documents>
+        <document id="ode.d.216_11" order="1" random-order="7" description="Bespreking en implementatie van de financiele begroting.&#xD;&#xA;De bijdrage van de overheid en kosten van ict zijn belangrijk." guessed-id="ode.d.216_11" guessed-order=""/>
+        <document id="ode.d.216_12_schriftelijke_vragen_mulder_inzake_leegstaande_gemeentepanden" order="2" random-order="10" description="Inventarisatie van leegstaande panden in Amsterdam.&#xD;&#xA;Zoals geschreven in het Parool, worden deze panden anders gekraakt." guessed-id="ode.d.216_12_schriftelijke_vragen_mulder_inzake_leegstaande_gemeentepanden" guessed-order=""/>
+        <document id="ode.d.216_13_schriftelijke_vragen_ivens_misstanden_rondom_verhuur_pand_nieuwezijds_voorburgwal_138" order="3" random-order="9" description="Inventarisatie van brandveiligheid aan de Nieuwezijds Voorburgwal.&#xD;&#xA;Uit het rapport blijkt dat boetes mogelijk zijn." guessed-id="ode.d.216_13_schriftelijke_vragen_ivens_misstanden_rondom_verhuur_pand_nieuwezijds_voorburgwal_138" guessed-order=""/>
+        <document id="ode.d.216a_12_bijlage_lijst_leegstaand_vastgoed_sept_2011" order="4" random-order="4" description="Leegstaande woningen nabij het Amstelpark kunnen worden omgebouwd.&#xD;&#xA;Een voorbeeld is het Cawa atelier." guessed-id="ode.d.216a_12_bijlage_lijst_leegstaand_vastgoed_sept_2011" guessed-order=""/>
+        <document id="ode.d.217_11" order="5" random-order="2" description="Bespreking van onderzoek naar islamitisch onderwijs in Nieuw-West.&#xD;&#xA;Moskeen zijn wellicht geen pedagogische instellingen." guessed-id="ode.d.217_11" guessed-order=""/>
+        <document id="ode.d.217_12_schriftelijke_vragen_van_lammeren_inzake_terrasverwarming" order="6" random-order="5" description="Verordening tot het verbieden van terrasverwarming.&#xD;&#xA;De Partij voor de Dieren wil een uitspraak van de raad." guessed-id="ode.d.217_12_schriftelijke_vragen_van_lammeren_inzake_terrasverwarming" guessed-order=""/>
+        <document id="ode.d.217dalenruigrokflos" order="7" random-order="1" description="De subsidie van evenementen moet omlaag.&#xD;&#xA;Kosten voor beveiliging en opbouw moeten worden doorberekend aan de organisatie." guessed-id="ode.d.217dalenruigrokflos" guessed-order=""/>
+        <document id="ode.d.218_11" order="8" random-order="6" description="De Volkskrant bericht over het klimaat van onderwijs in moskeeen.&#xD;&#xA;De lespraktijk en pedagogische waarde moet duidelijk worden." guessed-id="ode.d.218_11" guessed-order=""/>
+        <document id="ode.d.219_11" order="9" random-order="8" description="De Trouw bericht over veiligheid in de horeca.&#xD;&#xA;Preventief fouilleren is nodig vanwege de vele wapens in clubs." guessed-id="ode.d.219_11" guessed-order=""/>
+        <document id="ode.d.21_12_schriftelijke_vragen_van_t_wout_inzake_kaartverkoop_ov_rondom_staking_gvb" order="10" random-order="3" description="Advies voor de verduidelijking van het OV voor toeristen.&#xD;&#xA;Stakingen en onbruikbare meerdagenkaarten leiden regelmatig tot incidenten." guessed-id="ode.d.21_12_schriftelijke_vragen_van_t_wout_inzake_kaartverkoop_ov_rondom_staking_gvb" guessed-order=""/>
+    </documents>
+    <score>
+        <agreement number-of-agreements=""/>
+    </score>
+</evaluation>

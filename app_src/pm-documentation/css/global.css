@@ -1,0 +1,213 @@
+/*
+Goldilocks Approach to Responsive Web Design Boilerplate
+
+Author: Design by Front - @designbyfront
+Version: 0.1
+URL: http://www.goldilocksapproach.com
+----------------------------------------------------------------------------------------
+
+CONTENTS - GLOBAL.CSS
+-----------------------------------------
+1. RESET
+2. ROOT
+3. CORE TYPOGRAPHY
+4. LINKS
+5. GLOBAL LAYOUT & GLOBAL CUSTOM TYPOGRAPHY
+6. CUSTOM LAYOUT & TYPOGRAPHY (Baby bear)
+7. BROWSER AND NON-SEMANTIC STYLING
+
+CONTENTS - LAYOUT.CSS
+-----------------------------------------
+8. CUSTOM LAYOUT & TYPOGRAPHY (Daddy bear)
+9. CUSTOM LAYOUT & TYPOGRAPHY (Mummy bear)
+
+*/
+
+
+/* 1. RESET
+----------------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size:100%;
+  font: inherit;
+  vertical-align: baseline;
+  }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+  }
+  
+  
+/* 2. ROOT
+----------------------------------------------------------------------------------------*/
+html { 
+  overflow-y: scroll;
+  background: #FFF;
+  }
+
+/* /ht Ethan Marcotte - http://front.ie/l8rJaA */
+img, embed, object, video { max-width: 100%; }
+.ie6 img.full, .ie6 object.full, .ie6 embed, .ie6 video { width: 100%; }
+
+
+/* 3. CORE TYPOGRAPHY
+----------------------------------------------------------------------------------------*/
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1em;
+  line-height: 1.618em;
+  color: #333;
+  }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.809em;
+  line-height: 1em;
+  }
+
+p, ul, ol, dl, blockquote {
+    font-size: 1em;
+    line-height: 1.618em;
+    margin-bottom: 1.618em; 
+    max-width: 30em; /* Optimal width for long-form text */
+  }
+    
+ul { list-style-type: disc; margin-left: 1.618em; }
+ol { list-style-type: decimal; margin-left: 1.618em; }
+nav ul, nav ol { list-style: none; margin: 0; padding: 0;}
+
+b, strong { font-weight: bold; }
+i, em { font-style: italic; }
+small { font-size: 80%; }
+
+
+/* 4. LINKS
+----------------------------------------------------------------------------------------*/
+a, a:visited { outline: none; color: #439BBD; text-decoration: underline; }
+a:hover { outline: none; text-decoration:none; }  
+a:active, a:focus { outline: none; }
+
+
+/* 5. GLOBAL LAYOUT & GLOBAL CUSTOM TYPOGRAPHY
+----------------------------------------------------------------------------------------*/
+
+
+
+/* 6. CUSTOM LAYOUT & TYPOGRAPHY (Baby bear)
+----------------------------------------------------------------------------------------*/
+#container {
+    padding: 0.809em;
+    max-width: 30em;
+    margin: auto;
+  }
+
+aside { width: 100%; }
+
+
+/* 7. BROWSER AND NON-SEMANTIC STYLING
+----------------------------------------------------------------------------------------*/
+.cf:before, .cf:after { content: ""; display: block; }
+.cf:after { clear: both; }
+.ie6 .cf { zoom: 1 }
+
+
+
+/* PM overwrites */
+/*@import url("../global.css");*/
+
+html { 
+  /*background: rgb(244, 244, 244);*/
+  background: #fff;
+  }
+
+nav ul {margin-bottom: 0.5em;}
+nav ul li {font-size: 90%; font-family: sans-serif;}
+
+p.intro { font-size: 1.309em; margin-bottom: 1em; }
+
+/*p {max-width: none;}*/
+/*p.intro { max-width: 30em; }*/
+
+p.todo, span.todo, dd.todo, dt.todo, h3.todo, h4.todo {color: red;}
+
+p.nb, span.nb, dd.nb, dt.nb {color: #a33;}
+p.nb:before, dd.nb:before, dt.nb:before {content: "! ";}
+
+p.old, span.old, dd.old, dt.old {color: #777;}
+p.old:before, dd.old:before, dt.old:before {content: "// ";}
+
+p {font-family: sans-serif;}
+
+/*
+h1 {
+  text-align: center;
+  font-size: 2.618em;
+  line-height: 1.2em;
+  }
+*/
+
+header {text-align: center;}
+
+h1 { letter-spacing:0.12em; font-size: 2em; line-height: 1.2em; font-weight: bold; border-bottom: 2px solid grey;}
+
+h2 { text-transform:uppercase; letter-spacing:0.12em; font-size: 1.2em; font-weight: bold; border-bottom: 2px solid grey;}
+h3 { font-size: 1.1em; border-bottom: 1px solid grey;}
+h4 {font-variant:small-caps; border-bottom: 1px dotted grey;}
+h6 {font-weight: bold; font-size: 0.9em; margin-bottom: 2em;}
+
+h3, h4, h6 {font-family: sans-serif;}
+
+aside {padding: 0.5em 0 0 0.5em;}
+
+aside{border: 1px solid grey; margin-bottom: 1em;}
+aside section {margin: 0 0 1em 0;}
+
+em {font-style: normal; font-weight: bold;}
+
+code {font-family: monospace; color: #430; font-weight: bold;}
+/*code {font-size: 130%;}*/
+
+dl {font-size: 90%; font-family: sans-serif;}
+dd {margin-left: 1em;}
+dt {margin-top: 1em;}
+dd.requirements {color: #336;}
+dd.required-by, dd.required-by a {color: #363;}
+dd.requirements:before {content: "< ";}
+dd.required-by:before {content: "> ";}
+dd.description {border-bottom: 1px solid #bbb; margin-top: 0.3em;}
+
+div.section-content dt {font-weight: bold;}
+
+td, th {padding: 0 0.3em; border-bottom: 1px solid #bbb;}
+th {text-align: left; font-weight: bold;}
+table {margin-bottom: 2em;}
+
+/* Give links specific colours, matching the html viewer. */
+/*a.internal:hover {color: #448 !important;}*/
+a, a:visited {text-decoration: none; border-bottom: 1px dashed #439bbd;}
+
+a.politicalmashup {border-color: #f0037f;}
+a.external {border-color: #8a0a07;}
+
+a:hover, a.politicalmashup:hover, a.external:hover {border-style: solid;}
+
+a.politicalmashup:hover {color: #f0037f;}
+a.external:hover {color: #8a0a07;}
+
+pre {border: 1px dashed #aaa; padding-left: 0.4em;}
+pre.codedocumentation {font-size: 90%; font-family: monospace; color: #666;}
+
+footer {border-top: 2px solid #aaa;}

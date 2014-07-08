@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>Backend utilities for the Political Mashup project.</description>
+    <author>Arjan Nusselder</author>
+    <website>http://politicalmashup.nl/</website>
+    <status>beta</status>
+    <license>MIT</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>backend</target>
+    <prepare>pre-install.xql</prepare>
+    <finish/>
+    <deployed>2014-03-12T12:06:15.526+01:00</deployed>
+</meta>

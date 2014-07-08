@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>Collection of xquery modules used by Political Mashup applications.</description>
+    <author>Arjan Nusselder</author>
+    <website>http://politicalmashup.nl/</website>
+    <status>beta</status>
+    <license>MIT</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>modules</target>
+    <prepare/>
+    <finish>post-install.xql</finish>
+    <deployed>2014-04-15T12:33:43.401+02:00</deployed>
+</meta>

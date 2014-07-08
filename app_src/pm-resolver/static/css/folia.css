@@ -1,0 +1,229 @@
+        body {
+        /*background: #222222;*/
+        background: #b7c8c7;
+        font-family: sans-serif;
+        font-size: 12px;
+        margin-bottom:240px;
+        }
+        
+        body{background: #fff;}
+        
+        div.text {
+        width: 700px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+        text-align: left;
+        background: white;
+        border: 2px solid black;
+        }
+        
+        div.div {
+        padding-left: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        }
+        
+        #metadata {
+        font-family: sans-serif;
+        width: 700px;
+        font-size: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background: #b4d4d1; /*#FCFFD0;*/
+        border: 1px solid #628f8b;
+        width: 40%;
+        padding: 5px;
+        }
+        #metadata table {
+        text-align: left;
+        }
+        
+        #text {
+        border: 1px solid #628f8b;
+        width: 60%;
+        max-width: 1024px;
+        background: white;
+        padding: 20px;
+        padding-right: 100px;
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #222;
+        }
+        .s {
+        background: white;
+        display: inline;
+        border-left: 1px white solid;
+        border-right: 1px white solid;
+        }
+        .s:hover {
+        background: #e7e8f8;
+        border-left: 1px blue solid;
+        border-right: 1px blue solid;
+        }
+        p.s {display: block;}
+        .word {
+        display: inline;
+        color: black;
+        position: relative;
+        text-decoration: none;
+        z-index: 24;
+        }
+        .sh { 
+        background: #f4f9ca;
+        }
+        .cor {
+        background: #f9caca;
+        }
+        .s:hover .sh { 
+        background: #cfd0ed;
+        }
+        .s:hover .cor { 
+        background: #cfd0ed;
+        }
+        
+        #text {
+        border: 1px solid #628f8b;
+        width: 60%;
+        max-width: 1024px;
+        background: white;
+        padding: 20px;
+        padding-right: 100px;
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #222;
+        }
+        
+        .word {
+        display: inline;
+        color: black;
+        position: relative;
+        text-decoration: none;
+        z-index: 24;
+        }
+        
+        .t {
+        display: inline;
+        text-decoration: none;
+        z-index: 24;
+        }
+        
+        .word>.attributes { display: none; font-size: 12px; font-weight: normal; }
+        .word:hover {
+        /*text-decoration: underline;*/
+        z-index: 25;
+        }
+        .word:hover>.t {
+        background: #bfc0ed;
+        text-decoration: underline;
+        }
+        
+        .word:hover>.attributes {
+        display: block;
+        position: absolute;
+        width: 340px;
+        font-size: 12px;
+        /*left: 2em;
+        top: 2em;*/
+        left: 0em;
+        top: 0em;
+        margin: 1em;
+        background: #b4d4d1; /*#FCFFD0;*/
+        opacity: 0.9; filter: alpha(opacity = 90);
+        border: 1px solid #628f8b;
+        padding: 5px;
+        text-decoration: none !important;
+        text-align: left;
+        }
+        .attributes dt {
+        color: #254643;
+        font-weight: bold;
+        }
+        .attributes dd {
+        color: black;
+        font-family: monospace;
+        }
+        .attributes .wordid {
+        display: inline-block:
+        width: 100%;
+        font-size: 75%;
+        color: #555;
+        font-family: monospace;
+        text-align: center;
+        }
+        .event {
+        padding: 10px;
+        border: 1px solid #4f7d87;
+        }
+        pre.gap {
+        width: 90%;
+        padding: 5px;
+        border: 1px dashed #ddd;
+        white-space: pre-wrap;
+        }
+        span.attrlabel {
+        display: inline-block;
+        color: #254643;
+        font-weight: bold;
+        width: 110px;
+        }
+        span.attrvalue {
+        font-weight: 12px;
+        font-family: monospace;
+        }
+        span.spanclass {
+        color: #990000;
+        text-weight: bold;
+        }
+        span.morpheme {
+        font-style: italic;
+        }
+        span.details {
+        font-style: normal;
+        font-size: 80%;
+        }
+        
+        div.caption {
+        text-align: center;
+        style: italic;
+        }
+        
+        
+        div#iewarning {
+        width: 90%;
+        padding: 10px;
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        }
+        td {
+        border: 1px solid #ddd;
+        }
+        thead {
+        font-weight: bold;
+        background: #ddd;
+        }
+        
+        /*div.folia-meta{background:#eee;padding:10px;margin:5px 0;clear:both;}*/
+        div.folia-document-content{border-top:2px solid #aaa;margin-top:10px;}
+        p.folia-s{width:600px;padding:5px;border:1px solid #eee;margin-left:5px;}
+        span.folia-class-loc{color:#f00;font-weight:bold;}
+        span.folia-class-per{color:#00f;font-weight:bold;}
+        span.folia-class-org{color:#f0f;font-weight:bold;}
+        span.folia-class-pro{color:#000;font-weight:bold;}
+        span.folia-class-misc{color:#444;font-weight:bold;font-style:italic;}
+        span.folia-class-other{color:#666;font-style:italic;}
+        span.folia-has-wiki{border:2px dashed #000;padding:0 0.4em;}
+        form.folia-wordle textarea,form.folia-wordle button{border:1px solid #000;display:block;}
+        form.folia-wordle textarea{width:99%; height: 200px;}
+        form.folia-wordle button{width:100%;}
+        form.folia-wordle{height:auto}
+        /*div#folia-d3-cloud{float:left;height: 350px;}*/

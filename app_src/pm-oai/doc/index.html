@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+    <head>
+        <title>OAI support for PoliticalMashup/War in Parliament collections</title>
+    </head>
+    <body>
+        <h1>OAI support for PoliticalMashup/War in Parliament collections</h1>
+        <p>
+We support the <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html">OAI Protocol for Metadata Harvesting</a>
+(OAI-PMH) for harvesting of our data collections.
+The OAI-PMH endpoint lives at <tt>
+                <a href="http://oai.politicalmashup.nl/">oai.politicalmashup.nl</a>
+            </tt>;
+it allows access to the metadata of our
+Dutch parliamentary proceedings, members of parliament and political parties databases.
+All our identifiers live in the <tt>oai:urn:nbn:nl:ui:35</tt> namespace.
+</p>
+        <p>
+The OAI-PMH endpoint supports the verb <tt>
+                <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#GetRecord">GetRecord</a>
+            </tt>,
+<tt>
+                <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#Identify">Identify</a>
+            </tt>,
+<tt>
+                <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#ListRecords">ListRecords</a>
+            </tt>
+and <tt>
+                <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#ListSets">ListSets</a>
+            </tt>.
+The only metadata format supported is <a href="http://standards.jisc.ac.uk/catalogue/DIDL.phtml">DIDL</a>,
+the MPEG-21 Digital Item Declaration Language.
+</p>
+        <p>
+We support the optional <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#Set">Sets</a> feature of OAI-PMH.
+The available sets are listed by the <tt>ListSets</tt> verb; the relevant ones are currently
+<ul>
+                <li>
+                    <tt>d:nl:proc</tt>: parliamentary proceedings</li>
+                <li>
+                    <tt>m:nl</tt>: Dutch members of parliament and government</li>
+                <li>
+                    <tt>p:nl</tt>: Dutch political parties and parliamentary factions</li>
+            </ul>
+        </p>
+        <p>
+For example, to obtain a list of all political parties, do a
+<a href="http://oai.politicalmashup.nl/?verb=ListRecords&amp;set=p:nl">
+                <tt>ListRecords</tt>
+with the set <tt>p:nl</tt>
+            </a>.
+To get more information about the first item listed,
+<tt>urn:nbn:nl:ui:35-nl.p.aov</tt>,
+do a <tt>GetRecord</tt> on it: 
+<a href="http://oai.politicalmashup.nl/?verb=GetRecord&amp;identifier=oai:urn:nbn:nl:ui:35-nl.p.aov">
+                <tt>http://oai.politicalmashup.nl/?verb=GetRecord&amp;identifier=oai:urn:nbn:nl:ui:35-nl.p.aov</tt>
+            </a>.
+</p>
+        <p>
+Among the returned information from a <tt>GetRecord</tt> operation
+is a resolver URL that can be used to fetch the full record.
+In the <tt>nl.p.aov</tt> example, that URL is
+<tt>
+                <a href="http://resolver.politicalmashup.nl/nl.p.aov">http://resolver.politicalmashup.nl/nl.p.aov</a>
+            </tt>
+        </p>
+    </body>
+</html>

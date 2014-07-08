@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>OAI access to the Political Mashup data set.</description>
+    <author>Lars Buitinck</author>
+    <author>Arjan Nusselder</author>
+    <website>http://politicalmashup.nl/</website>
+    <status>beta</status>
+    <license>MIT</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>oai</target>
+    <prepare>pre-install.xql</prepare>
+    <finish/>
+    <deployed>2014-07-02T14:19:48.029+02:00</deployed>
+</meta>

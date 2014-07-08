@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>Search interface for the Political Mashup Dutch proceedings.</description>
+    <author>Lars Buitinck</author>
+    <author>Arjan Nusselder</author>
+    <website>http://politicalmashup.nl/</website>
+    <status>beta</status>
+    <license>MIT</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>search</target>
+    <prepare/>
+    <finish/>
+    <deployed>2014-03-12T12:06:16.859+01:00</deployed>
+</meta>
