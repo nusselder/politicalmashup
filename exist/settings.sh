@@ -1,8 +1,8 @@
 #!/bin/bash
 # Load this file to set some variables.
 
-PM_EXIST_PORT="8006"
-PM_EXIST_PORT_SSL="8444"
+PM_EXIST_PORT="8004"
+PM_EXIST_PORT_SSL="8104"
 PM_EXIST_LOG="start_jetty.log"
 PM_EXIST_ERR="start_jetty.err"
 
