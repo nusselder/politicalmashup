@@ -1,6 +1,16 @@
 #!/bin/bash
 # Prepare aps and data for database inclusion after installation.
 
+# The data location might change if servers are moved..
+PM_DATA_BASE="http://ode.politicalmashup.nl/data/politicalmashup/"
+
+function get_folder_data {
+  if [ -n "$1" ]; then
+    wget "${PM_DATA_BASE}$1"
+    tar -xf "$1"
+  fi
+}
+
 SCRIPT_ABS_PATH="$(cd "${0%/*}" 2>/dev/null; echo "$PWD")"
 
 . "$SCRIPT_ABS_PATH/settings.sh"
@@ -15,23 +25,15 @@ cd "$PM_EXIST_APPS_DIR"
 "$package" "$src_dir/pm-modules/"
 "$package" "$src_dir/pm-backend/"
 "$package" "$src_dir/pm-resolver/"
-"$package" "$src_dir/ode-tools/"
-cd -
-
-
-echo "Downloading demo-data apps."
-mkdir -p "$PM_EXIST_DATA_APPS_DIR"
-cd "$PM_EXIST_DATA_APPS_DIR"
-wget "http://ode.politicalmashup.nl/data/xar/ode-data-municipality-0.1.2.xar"
-wget "http://ode.politicalmashup.nl/data/xar/ode-data-vergunningen-0.1.1.xar"
+"$package" "$src_dir/pm-search/"
 cd -
 
 echo "Downloading and unpacking annotated proceedings data."
 mkdir -p "$PM_EXIST_FOLDER_DATA_DIR"
 cd "$PM_EXIST_FOLDER_DATA_DIR"
-#wget "http://ode.politicalmashup.nl/data/targz/nl-proc-ob-annotated.tar.gz"
-#tar -xf nl-proc-ob-annotated.tar.gz
-wget "http://ode.politicalmashup.nl/data/targz/nl-proc-ob-annotated-20112012.tar.gz"
-tar -xf nl-proc-ob-annotated-20112012.tar.gz
+get_folder_data "p-nl.tar.gz"
+get_folder_data "m-nl.tar.gz"
+get_folder_data "d-nl-proc-ob.tar.gz"
+get_folder_data "d-nl-proc-sgd.tar.gz"
 cd -
 
