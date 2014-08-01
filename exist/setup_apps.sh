@@ -5,7 +5,7 @@
 # Patch the settings file in pm-modules (see set_global_references.sh).
 if [ "$1" = "politicalmashup" ]; then
   sgr=""
-else if [ "$1" = "ode" ]; then
+elif [ "$1" = "ode" ]; then
   sgr="ode"
 else
   sgr="local"
