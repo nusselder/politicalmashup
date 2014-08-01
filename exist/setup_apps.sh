@@ -2,6 +2,16 @@
 # Install apps into a non-running database and start it afterwards.
 # Call after initial_install.sh
 
+# Patch the settings file in pm-modules (see set_global_references.sh).
+if [ "$1" = "politicalmashup" ]; then
+  sgr=""
+else if [ "$1" = "ode" ]; then
+  sgr="ode"
+else
+  sgr="local"
+fi
+
+
 SCRIPT_ABS_PATH="$(cd "${0%/*}" 2>/dev/null; echo "$PWD")"
 
 . "$SCRIPT_ABS_PATH/settings.sh"
@@ -40,6 +50,9 @@ cd "$PM_EXIST_INSTALL_DIR"
 cp -v "$PM_EXIST_APPS_DIR"/pm-modules*.xar autodeploy/
 
 exist_start_foreground
+
+# Edit settings.xqm, after ctrl-c (so, during shutdown).
+./set_global_references.sh "$sgr"
 
 # Copy all apps (modules already exists but is ignored by the database).
 cp -v "$PM_EXIST_APPS_DIR"/*.xar autodeploy/
