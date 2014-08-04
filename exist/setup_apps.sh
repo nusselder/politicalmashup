@@ -59,7 +59,7 @@ exist_start_foreground
 
 # Edit settings.xqm, after ctrl-c (so, during shutdown).
 echo "*****"
-echo "* setting glocal references as: $sgr"
+echo "* setting global references as: $sgr"
 $SCRIPT_ABS_PATH/set_global_references.sh "$sgr"
 echo "*****"
 
