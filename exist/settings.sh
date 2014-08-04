@@ -29,7 +29,10 @@ function exist_start_foreground {
 
 function exist_start_background {
   exist_start_foreground 1>> "$PM_EXIST_LOG" 2>> "$PM_EXIST_ERR" &
+  # trap ctrl-c to allow script continuation
+  trap " " INT
   tail -f "$PM_EXIST_LOG"
+  trap - INT
 }
 
 function confirm {
