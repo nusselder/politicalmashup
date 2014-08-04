@@ -29,9 +29,9 @@ cd -
 echo "Downloading and unpacking annotated proceedings data."
 mkdir -p "$PM_EXIST_FOLDER_DATA_DIR"
 cd "$PM_EXIST_FOLDER_DATA_DIR"
-#wget "http://ode.politicalmashup.nl/data/targz/nl-proc-ob-annotated.tar.gz"
-#tar -xf nl-proc-ob-annotated.tar.gz
-wget "http://ode.politicalmashup.nl/data/targz/nl-proc-ob-annotated-20112012.tar.gz"
-tar -xf nl-proc-ob-annotated-20112012.tar.gz
+#wget "http://ode.politicalmashup.nl/data/targz/nl-proc-ob-annotated-20112012.tar.gz"
+#tar -xf nl-proc-ob-annotated-20112012.tar.gz
+wget "http://ode.politicalmashup.nl/data/targz/nl-proc-ob-annotated.tar.gz"
+tar -xf nl-proc-ob-annotated.tar.gz
 cd -
 
