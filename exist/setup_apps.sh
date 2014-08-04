@@ -27,7 +27,7 @@ echo ""
 echo "The third time, the database is started in the background, with a"
 echo "\`tail -f\` on the logfile."
 echo "When finished starting (can take quite some time when data apps are"
-echo "added), CTRL-C to exist tail; the database keeps running."
+echo "added), CTRL-C to exit tail; the database keeps running."
 echo ""
 
 confirm "start .xar deployment"
