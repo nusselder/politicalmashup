@@ -14,7 +14,7 @@ and part automation.
    * `initial_install.sh`: download and install bare eXist database
    * `set_global_references.sh`: edit installed settings file (req. restart)
    * `setup_apps.sh`: install all apps after `initial_install.sh`
-   * `setup_data_xml.sh: add additional data after `setup_apps.sh`
+   * `setup_data_xml.sh`: add additional data after `setup_apps.sh`
 
    * `start_jetty_bound.sh`: start database bound to terminal
    * `start_jetty.sh`: start database in background and then tail on the log
