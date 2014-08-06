@@ -10,8 +10,12 @@ import module namespace export="http://politicalmashup.nl/modules/export";
   </head>
   <body>
     <h1>Chronological overview of entities and distinctive terms</h1>
-    <p>A quick visual overview of the importance of terms is often presented as timeline.</p>
-    <p>TODO: write more</p>
+    <p>A quick visual overview of the importance of terms is often presented as a timeline, e.g. the <a href="https://books.google.com/ngrams">Google books ngram viewer</a> or a similar viewer on a Dutch corpus of <a href="http://kbkranten.politicalmashup.nl/#q/minister%20van%20oorlog|minister%20van%20defensie">newspaper archives</a>.</p>
+    <p>Using the summary annotations, entities and distinctive terms, similar charts can be created.<br/>
+       This gives additional possibilities to search with respect to different time periods.</p>
+    <p>These charts use a pre-computed vocabulary (en entities and terms) and currently have no free-text search enabled.
+       <em>TODO: describe entity list or way to get at terms, but that is only a question of interface.</em>
+    </p>
        
     <h2>Examples</h2>
     <p>Some examples that show possible events, and highlight the importance of proper interpretation.</p>
