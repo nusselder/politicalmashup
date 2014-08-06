@@ -92,9 +92,9 @@ declare function local:create-output() {
     <from explanation="xs:date from meeting date"/>,
     <till explanation="xs:date till meeting date"/>,
     <house explanation="body of legislature, single one or multiples seperated by '|', typically: 'commons', 'senate', 'commons|senate'"/>,
+    <rest explanation="true|false, give rest points to the raw stored xml (PM only); this is the fastest for data dumps"/>,
     <src explanation="html, pdf, xml, or any combination seperated by '|' (not all src may be defined)"/>,
-    <output explanation="xml, html, rdf, meta, docinfo, rest, or any combination seperated by '|', or empty"/>,
-    <rest explanation="true|false, give rest points to the raw stored xml; this is the fastest for data dumps"/>,
+    <output explanation="xml, html, rdf, meta, docinfo, or any combination seperated by '|', or empty"/>,
     <infofields explanation="legislative-period, date, house, id, or any combination seperated by '|', or 'none' for no fields"/>
                                 ),
                                 $request)
@@ -106,6 +106,7 @@ declare function local:create-output() {
   let $example := <div>
     <p>Create lists of downloadable files as are available on our server.<br/>
     For example, list all downloadable xml files from the Dutch proceedings that describe meetings since 2012-10-01: <a href="?collection=d%2Fnl%2Fproc%2Fob&amp;collections=&amp;from=2012-10-01&amp;output=xml&amp;infofields=none">table</a> (or as <a href="?collection=d%2Fnl%2Fproc%2Fob&amp;from=2012-10-01&amp;output=xml&amp;infofields=none&amp;view=csv">csv</a>)<br/>
+    For example, list all Dutch member files at the REST interface for faster access: <a href="?collection=m%2Fnl&amp;rest=true&amp;infofields=none">rest members</a><br/>
     Please note that requesting a list of many documents can take some time to generate.</p>
   </div>
 
@@ -140,7 +141,7 @@ declare function local:list-documents($request) {
   let $info-fields := if ($request/@infofields eq 'none') then () else tokenize($request/@infofields,'\|')[. ne 'none'] 
   let $column-names := export:xml-util-headers( ($info-fields, $sources-header, $outputs-header, $rest-header) )
   
-  let $rest-url := 'http://localhost:8080/exist/rest/db/data/permanent/'
+  let $rest-url := 'http://rest.politicalmashup.nl/'
   
   let $items :=
     for $document in $collection
