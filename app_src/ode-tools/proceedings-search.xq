@@ -66,18 +66,18 @@ declare function local:select-scope($collection, $request) {
   let $scope := if ($request/@start-date) then $scope[.//dc:date ge xs:date($request/@start-date)] else $scope
   let $scope := if ($request/@end-date) then $scope[.//dc:date le xs:date($request/@end-date)] else $scope
     
-  let $scope := if ($request/@search eq 'document') then $scope//pm:scene
-                else if ($request/@search eq 'titel') then $scope//pmx:title
-                else if ($request/@search eq 'tekst') then $scope//pmx:text
+  let $scope := if ($request/@search eq 'scene') then $scope//pm:scene
+                else if ($request/@search eq 'speech') then $scope//pm:speech
+                else if ($request/@search eq 'paragraph') then $scope//pm:p
                 else ()
   return $scope
 };
 
 
 
-let $search-fields := 'document,titel,tekst'
+let $search-fields := 'scene,speech,paragraph'
 
-let $request := export:request-parameters( (<view default="table" accept="csv,table,xml"/>, <search default="document" accept="{$search-fields}"/>,
+let $request := export:request-parameters( (<view default="table" accept="csv,table,xml"/>, <search default="scene" accept="{$search-fields}"/>,
                                             <start-date type="xs:date"/>, <end-date type="xs:date"/>,
                                             <terms type="xs:integer" default="10"/>,
                                             <query type="ft:query"/>, <limit default="20" type="xs:integer"/>) )
@@ -94,11 +94,11 @@ let $request := export:request-parameters( (<view default="table" accept="csv,ta
                                 $request):)
                                 
 let $options := export:options( (
-                                  <search explanation="Niveau zoekopdracht: hele document, alleen in de titel of alleen in de tekst." select="{$search-fields}"/>,
-                                  <start-date explanation="Begindatum, in iso-formaat (b.v. 2011-05-24)."/>,
-                                  <end-date explanation="Einddatum, in iso-formaat."/>,
-                                  <limit explanation="Maximum aantal getoonde resultaten."/>,
-                                  <terms explanation="tijdelijk: aantal getoonde cloud-terms"/>
+                                  <search explanation="Document level: scene, speech or paragraph." select="{$search-fields}"/>,
+                                  <start-date explanation="From date, in iso-format (e.g. 2011-05-24)."/>,
+                                  <end-date explanation="To date, in iso-format."/>,
+                                  <limit explanation="Max. numbers shown results."/>,
+                                  <terms explanation="number of cloud-terms summary shown"/>
                                 ),
                                 $request)
 
@@ -112,16 +112,16 @@ let $introduction-html :=
     <div class="introduction">
       <form method="get" action="">
         <div>
-          <p style="font-size:14px;font-weight:bold;">Demonstrator zoekmachine Amsterdamse Schriftelijke Vragen.</p>
-          <p>Zoekresultaten tonen de publicatie <span class="intr-datum">datum</span> (indien aanwezig) en <span class="intr-link">link</span> naar het document.<br/>
-             Daaronder de meest onderscheidende <span class="intr-term">woorden</span> in dat document.<br/>
-             Ten slotte een kort <span class="intr-fragment">tekstfragment</span> waarin de zoekterm stond.</p>
-          <p>Rechts staan een aantal extra zoek opties.</p>
+          <p style="font-size:14px;font-weight:bold;">Demonstrator annotated searchengine Dutch proceedings.</p>
+          <p>Search results show the meeting <span class="intr-datum">date</span> and a <span class="intr-link">link</span> to the document.<br/>
+             Below the most distinctive <span class="intr-term">terms</span> for that document.<br/>
+             Finally a short text <span class="intr-fragment">snippet</span> around the search term.</p>
+          <p>To the right some advanced search options can be supplied.</p>
         </div>
         {export:html-util-generate-search-form($options, $request)}
         <div class="querybox">
           <input name="query" type="text" value="{$request/@query}"/>
-          <button type="submit">Zoeken</button>
+          <button type="submit">Search</button>
         </div>
       </form>
     </div>
@@ -133,7 +133,7 @@ let $output := if ($request/@view eq 'table') then ($introduction-html, $search-
                else if ($request/@view eq 'xml') then $xml-output
                else ()
 
-let $output := export:output($request/@view, $output, 'Zoeken in Amsterdamse Schriftelijke Vragen')
+let $output := export:output($request/@view, $output, 'Search the Dutch governmental proceedings')
 
 let $serialization := export:set-serialization( if ($request/@view eq 'table') then 'html' else if ($request/@view eq 'csv') then 'text' else 'xml' )
 

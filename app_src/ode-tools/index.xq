@@ -17,12 +17,10 @@ import module namespace export="http://politicalmashup.nl/modules/export";
     
     <h2>Timeline (M3)</h2>
     <p>A linechart approach to display a chronological <a href="timeline/">timeline</a> of terms and entities.</p>
+    <p>TODO: add direct link here after timeline finish</p>
     
     <h2>Search (M3)</h2>
-    <p>todo: overview of all presentation-ready search interfaces (including those listed below)</p>
-    
-    <h2>News (M3)</h2>
-    <p>todo: news messages were queried for dutch proc, based on speaker+date and lemma terms</p>
+    <p>The <a href="municipality-search.xq">municipality search</a> for the Amsterdam was adapted to the annotated set of Dutch governmental proceedings 1998-2012:  <a href="proceedings-search.xq">proceedings search</a>.</p>
     
     <h2>Initial assorted search interfaces (M2)</h2>
     <ul>
