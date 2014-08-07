@@ -360,7 +360,8 @@ let $introduction-html :=
     
 let $search-form := export:html-util-generate-search-form($options, $request)
 
-let $output := if ($request/@view eq 'table') then ($introduction-html, $search-form, export:html-output($xml-output))
+(:  :let $output := if ($request/@view eq 'table') then ($introduction-html, $search-form, export:html-output($xml-output)) :)
+let $output := if ($request/@view eq 'table') then ($introduction-html, $search-form)
                else if ($request/@view eq 'csv') then export:csv-output($xml-output)
                else if ($request/@view eq 'xml') then $xml-output
                else ()

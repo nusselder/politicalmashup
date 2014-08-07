@@ -17,10 +17,13 @@ import module namespace export="http://politicalmashup.nl/modules/export";
     
     <h2>Timeline (M3)</h2>
     <p>A linechart approach to display a chronological <a href="timeline/">timeline</a> of terms and entities.</p>
-    <p>TODO: add direct link here after timeline finish</p>
+    <p>Examples: <a href="timeline/entity-graph-monthly.xq?collection=d/nl/proc/ob&amp;entity=http://nl.wikipedia.org/wiki/Libi%C3%AB">"Libië" entities</a>; <a href="timeline/lemma-graph.xq?lemma=innoveren&amp;pos=WW&amp;collection=d%2Fnl%2Fproc%2Fob">""innoveren" lemma terms</a>.</p>
     
     <h2>Search (M3)</h2>
-    <p>The <a href="municipality-search.xq">municipality search</a> for the Amsterdam was adapted to the annotated set of Dutch governmental proceedings 1998-2012:  <a href="proceedings-search.xq">proceedings search</a>.</p>
+    <p>The annotated search for Amsterdam data was adapted to the annotated set of Dutch governmental proceedings in the period 1998-2012.</p>
+    <ul>
+      <li><a href="proceedings-search.xq">proceedings-search.xq (M3)</a> "google"-style search interface for the proceedings, enriched with term summary.</li>
+    </ul>
     
     <h2>Initial assorted search interfaces (M2)</h2>
     <ul>

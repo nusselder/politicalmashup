@@ -32,63 +32,27 @@ declare function local:summarise-entity-names($entity-names as xs:string*) as xs
 
 
 
-
-
-declare function local:lemma-per-day($collection, $request as element(request)) {
-
-(:
-  let $terms := $collection//cloud[@w eq '0.100000'][@pos eq $request/@pos]//term[. eq $request/@lemma]
-  
-  let $items :=
-    for $t in $terms
-    let $date := root($t)//dc:date
-    let $score := $t/@prob
-    order by $date
-    return
-      export:xml-row(
-        (
-        export:xml-item($date),
-        export:xml-item($score)
-        )
-      )
-      :)
-      
-  let $clouds := $collection//cloud[@w eq '0.100000'][@pos eq $request/@pos]
-  
-  let $items :=
-    for $c in $clouds
-    let $date := root($c)//dc:date
-    (:let $score := $c//term[. eq $request/@lemma]/@prob:)
-    let $score := max($c//term[. eq $request/@lemma]/@prob)
-    group by $date
-    order by $date
-    return
-      export:xml-row(
-        (
-        export:xml-item($date),
-        export:xml-item(if ($score) then $score else 0)
-        )
-      )
-  
-  let $headers := (
-    export:xml-util-description(concat('Lemma graph for: ',$request/@lemma)),
-    export:xml-util-headers( ('date','prob') )
+(: Escape input entity query, because xml (and index!) contains escaped strings. :)
+declare function local:fix-wikilink-input($request) {
+  (: Cut off the escaped part after the wiki link, then unescape the entity (in case input is actually escaped already), and escape the string, then combine again. :)
+  concat(
+    substring-before($request/@entity,'/wiki/'), '/wiki/',
+    replace(
+      encode-for-uri(    
+        util:unescape-uri(substring-after($request/@entity,'/wiki/'),'UTF-8')
+      ), '%2F', '/'
     )
-    
-  return export:xml-output( ($headers, $items) )
+  )
 };
 
 
-
-
-
-declare function local:output-html($parts as element()*, $data, $title as xs:string, $style as xs:string) as element() {
+declare function local:output-html($parts as element()*, $data, $request as element(request), $title as xs:string, $style as xs:string) as element() {
   <html>
     <head>
       {if ($title ne '') then <title>{$title}</title> else ()}
       {export:html-css()}
       {if ($style ne '') then <style>{$style}</style> else ()}
-      {local:chart-header($data)}
+      {local:chart-header($data, $request)}
     </head>
     <body>
       {$parts}
@@ -96,39 +60,41 @@ declare function local:output-html($parts as element()*, $data, $title as xs:str
   </html>
 };
 
+
 declare function local:chart-line($xml-output) {
   for $line in $xml-output/*
   (:let $date-date := replace($line/item[1]/@string,'-',','):)
   return
     if ($line[self::head]) then ()
-    (:else concat("['",$line/item[1]/@string,"',",$line/item[2]/@string,"],&#10;"):)
-    (:else concat("[new Date(",$date-date,"),",$line/item[2]/@string,"],&#10;"):)
-    else concat("[new Date('",$line/item[1]/@string,"'),",$line/item[2]/@string,"],&#10;")
+    else concat("[new Date('",$line/item[1]/@string,"'),",$line/item[2]/@string,",",$line/item[3]/@string,"],&#10;")
 };
+
+
 
 declare function local:chart-container() {
   <div id="chart_div" style="width: 900px; height: 500px;"></div>
 };
 
-declare function local:chart-header($data as xs:string*) {
+declare function local:chart-header($data as xs:string*, $request as element(request)) {
   let $start := 'google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ["Date", "max prob"],'
+          ["Year-month", "#documents", "#occurences"],'
           
-   let $end := ']);
+   let $end := concat(']);
         var options = {
-          title: "Lemma max day probability",
-          curveType: "function"
+          title: "Entity occurence"
         };
-
+        ','
         var chart = new google.visualization.LineChart(document.getElementById("chart_div"));
+      
         chart.draw(data, options);
-      }'
+      }')
 
    return
     (<script type="text/javascript" src="https://www.google.com/jsapi"></script>,
+    <script type="text/javascript" src="entity.js"></script>,
     <script type="text/javascript">
     {$start}
     {$data}
@@ -137,37 +103,75 @@ declare function local:chart-header($data as xs:string*) {
 };
 
 
+
+
+
+
+declare function local:entity-per-day($collection, $request as element(request)) {
+
+  let $wiki-link := local:fix-wikilink-input($request)
+
+  let $items :=
+    for $docs in $collection
+    let $date := $docs//dc:date
+    let $links := $docs//pm:link[. eq $wiki-link]
+    let $nr-docs := count($links)
+    let $nr-occ := sum($links/@pmx:entity-occurence)
+    group by $date
+    order by $date
+    return
+      export:xml-row(
+        (
+        export:xml-item($date),
+        export:xml-item($nr-docs),
+        export:xml-item($nr-occ)
+        )
+      )
+  
+  let $headers := (
+    export:xml-util-description(concat('Entity graph for: ',$wiki-link)),
+    export:xml-util-headers( ('date','#doc','#occ') )
+    )
+
+  return export:xml-output( ($headers, $items) )
+};
+
+
+
+
 let $accepted-collections := string-join(export:build-collection-tree(true()),',')
+
+let $count-queries := 'entities,documents'
 
 let $request := export:request-parameters( (<view default="table" accept="csv,table,xml"/>,
                                             (:<count accept="{$count-queries}"/>,:)
-                                            <lemma/>,
-                                            <pos default="all" accept="all,ADJ,N,WW"/>,
+                                            <entity/>,
                                             <collection accept="{$accepted-collections}"/>) )
 
 let $options := export:options( (
                                   (:<count explanation="choose example query" select="{$count-queries}"/>,:)
                                   <view explanation="view output as html table or plain text csv" select="csv,table"/>,
-                                  <lemma explanation="lemma to search for"/>,
-                                  <pos explanation="pos-tag" select="all,ADJ,N,WW"/>,
-                                  <collection explanation="available leaf collections" select="{$accepted-collections}"/>
+                                  <entity explanation="entity as wikilink to search for"/>,
+                                  <collection explanation="available leaf collections" select="{$accepted-collections}"/>,
+                                  <entity-escaped value="{local:fix-wikilink-input($request)}" explanation="escaped wiki link used for querying"/>
                                 ),
                                 $request)
 
 
 let $collection := local:select-collection($request)
 
-let $xml-output := local:lemma-per-day($collection,$request)
+let $xml-output := local:entity-per-day($collection,$request)
 
 let $introduction-html :=
     <div>
-      <p>Search for documents containing pre-computed entities.</p>
+      <p>Below a timeline is shown for a previously detected (pre-computed) Wikipedia entity link.
+         Data is shown per day, with both the number of documents, and total number of mentions within these documents.</p>
       {local:chart-container()}
     </div>
     
 let $search-form := export:html-util-generate-search-form($options, $request)
 
-let $output := if ($request/@view eq 'table') then ($introduction-html, $search-form, export:html-output($xml-output))
+let $output := if ($request/@view eq 'table') then ($introduction-html, $search-form)
                else if ($request/@view eq 'csv') then export:csv-output($xml-output)
                else if ($request/@view eq 'xml') then $xml-output
                else ()
@@ -175,7 +179,7 @@ let $output := if ($request/@view eq 'table') then ($introduction-html, $search-
 let $script-data := local:chart-line($xml-output)
 
 (:let $output := export:output($request/@view, $output, 'ODE-II FoLiA Entity Search'):)
-let $output := local:output-html($output, $script-data, 'ODE-II FoLiA Entity Search', '')
+let $output := local:output-html($output, $script-data, $request, 'ODE-II FoLiA Entity Search', '')
 
 let $serialization := export:set-serialization( if ($request/@view eq 'table') then 'html' else if ($request/@view eq 'csv') then 'text' else 'xml' )
 
