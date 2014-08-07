@@ -2,7 +2,7 @@
 # Prepare aps and data for database inclusion after installation.
 
 # The data location might change if servers are moved..
-PM_DATA_BASE="http://ode.politicalmashup.nl/data/politicalmashup/"
+PM_DATA_BASE="http://data.politicalmashup.nl/permanent/"
 
 function get_folder_data {
   if [ -n "$1" ]; then
