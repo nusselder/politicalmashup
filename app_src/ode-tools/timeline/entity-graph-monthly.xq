@@ -290,7 +290,7 @@ declare function local:chart-header($data as xs:string*, $request as element(req
           
    let $end := concat(']);
         var options = {
-          title: "Entity occurence"
+          title: "Entity occurence: ',$request/@entity,'"
         };
 
         var chart = new google.visualization.LineChart(document.getElementById("chart_div"));
