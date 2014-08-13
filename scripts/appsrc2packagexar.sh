@@ -8,7 +8,7 @@ package_dir="$1"
 package_file="$package_dir/expath-pkg.xml"
 
 if [ ! -d "$package_dir" ]; then
-  echo "No package directory given. Use ./package2xar.sh <directory>"
+  echo "No package directory given. Use appsrc2packagexar.sh <directory>"
   exit 1
 elif [ ! -f "$package_file" ]; then
   echo "Not a package directory, expath-pkg.xml missing."
