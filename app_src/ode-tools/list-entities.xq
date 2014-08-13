@@ -50,7 +50,7 @@ declare function local:entities($collection, $request as element(request)) {
       export:xml-row(
         (
         export:xml-item(concat('entity-search.xq?collection=',$request/@collection,'&amp;entity=',$l/@w),<options display="{util:unescape-uri($l/@w,'UTF-8')}" link="true"/>),
-        export:xml-item(concat('entity-graph.xq?collection=',$request/@collection,'&amp;entity=',$l/@w),<options display="{util:unescape-uri($l/@w,'UTF-8')}" link="true"/>),
+        export:xml-item(concat('timeline/entity-graph-monthly.xq?collection=',$request/@collection,'&amp;entity=',$l/@w),<options display="{util:unescape-uri($l/@w,'UTF-8')}" link="true"/>),
         export:xml-item($l/@c),
         export:xml-item($l/@p),
         export:xml-item($l/@w,<options link="true"/>)
